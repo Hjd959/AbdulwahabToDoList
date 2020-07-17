@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CATEGORY" representedClassName="CATEGORY" syncable="YES" codeGenerationType="class">
+        <attribute name="nameFolder" attributeType="String"/>
+        <relationship name="itemsRELATIONSHIPS" toMany="YES" deletionRule="Nullify" destinationEntity="ITEM" inverseName="parentCategoryRELATIONSHIPS" inverseEntity="ITEM"/>
+    </entity>
+    <entity name="ITEM" representedClassName=".ITEM" syncable="YES" codeGenerationType="class">
+        <attribute name="done" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="parentCategoryRELATIONSHIPS" maxCount="1" deletionRule="Nullify" destinationEntity="CATEGORY" inverseName="itemsRELATIONSHIPS" inverseEntity="CATEGORY"/>
+        <relationship name="textRELATIONSHIP" maxCount="1" deletionRule="Nullify" destinationEntity="TEXTADD" inverseName="parentItemRELATIONSHIP" inverseEntity="TEXTADD"/>
+    </entity>
+    <entity name="TEXTADD" representedClassName="TEXTADD" syncable="YES" codeGenerationType="class">
+        <attribute name="boxText" attributeType="String"/>
+        <relationship name="parentItemRELATIONSHIP" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ITEM" inverseName="textRELATIONSHIP" inverseEntity="ITEM"/>
+    </entity>
+    <elements>
+        <element name="ITEM" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="CATEGORY" positionX="-255.8984375" positionY="-13.06640625" width="128" height="73"/>
+        <element name="TEXTADD" positionX="135.265625" positionY="34.33203125" width="128" height="73"/>
+    </elements>
+</model>
